@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>health</title>
+        <link rel="stylesheet" href="css/s1.css">
+    </head>
+<body>
+    <center><div class="heading">Tell us about yourself..!!</div></center>
+    <div class="wrapper">
+        <div class="title">
+           Health Insurance
+        </div>
+       <form action="/health" method="post">
+         <div class="form">
+             <!-- <div class="input_field">
+                 <label>First Name</label>
+                 <input type ="text" name="fname" class="input">
+             </div> -->
+             <div class="input_field">
+             <label>Name</label>
+                 <input type ="text" name="name" class="input">
+             </div>
+             <div class="input_field">
+                <label>Gender</label>
+                <input type="radio" name=gender value="male" class="input">Male
+                <input type="radio" name=gender value="female" class="input">Female
+            </div>
+             <div class="input_field">
+                 <label>Age</label>
+                 <input type="text" name="age" class="input">
+             </div>
+             <div class="input_field">
+                 <label>Contact Number</label>
+                 <input type="text" name="cno" class="input">
+             </div>
+             <div class="input_field">
+                 <label>Address</label>
+                 <textarea name="address" class="textarea"></textarea>
+             </div>
+             <div class="input_field">
+                 <label>Postal Code</label>
+                 <input type="text" name="pin"class="input">
+             </div>
+             <div class="input_field">
+                <label>Occupation</label>
+                <input type ="text" name="occupation" class="input">
+            </div>
+            <div class="input_field">
+                <label>Marital Status</label>
+                <div class="custom_select">
+                    <select name="status">
+                        <option value="">Select</option>
+                        <option name="status" value="married">Married</option>
+                        <option name="status" value="unmarried">Unmarried</option>
+                    </select>
+                </div>
+            </div>
+            <div class="input_field">
+                <label>Income in Rupees</label>
+                <div class="custom_select">
+                    <select name="income">
+                        <option value="">Select</option>
+                        <option name="income" value=">Uoto 10000">Uoto 10000</option>
+                        <option name="income" value="10000 to 20000">10000 to 20000</option>
+                        <option name="income" value="20000 to 50000">20000 to 50000</option>
+                        <option name="income" value="Above 50000">Above 50000</option>
+                    </select>
+                </div>
+            </div>
+            <!-- <div class="input_field">
+                <label>Type of Family</label>
+                <input type="radio" name="fam" value="joint" class="input">Joint
+                <input type="radio" name="fam" value="nuclear" class="input">Nuclear
+            </div> -->
+            <div class="input_field">
+                <label>Doctor's Name</label>
+                <input type="text" name="docname" class="input">
+            </div>
+            <div class="input_field">
+                <label>Disease Name</label>
+                <input type="text" name="disease"class="input">
+            </div>
+            <div class="input_field">
+                <label>Attendant</label>
+                <input type="text" name= "witnessname"class="input">
+            </div>
+            <div class="input_field">
+                <label>Event Date</label>
+                <input type="date" name="date"class="input">
+            </div>
+            <div class="input_field">
+                <label>Event Location</label>
+                <input type="text" name= "location"class="input">
+            </div>
+            <div class="input_field">
+                <label>Current Latitude</label>
+                <input type="text" name= "latitude" id="lat" class="input">
+            </div>
+            <div class="input_field">
+                <label>Current Longitude</label>
+                <input type="text" name= "longitude" id="long" class="input">
+            </div>
+            <div class="input_field terms">
+               <label class="check">
+                   <input type="checkbox">
+                   <span class="checkmark"></span>
+               </label>
+               <p>Agreed to terms and conditions</p>
+            </div>
+            <div class="input_field">
+               <input type="submit" value="Register" class="btn" name="register">
+            </div>
+        </div>
+    </form>
+    </div>
+    <script>
+    var x = document.getElementById("lat");
+    var y = document.getElementById("long");
+    navigator.geolocation.getCurrentPosition(successLocation, errorLocation, {
+      enableHighAccuracy: true
+    })
+    function successLocation(position) {
+      x.value = position.coords.latitude;
+      y.value = position.coords.longitude;
+      // x.value = "Worked";
+    }
+
+    function errorLocation() {
+        x.value = "error";
+        y.value = "error";
+    }
+
+    </script>
+</body>
+</html>

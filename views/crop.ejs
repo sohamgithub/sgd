@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Crop Insurance</title>
+        <link rel="stylesheet" href="css/s1.css">
+    </head>
+<body>
+    <center><div class="heading">Tell us about yourself..!!</div></center>
+    <div class="wrapper">
+        <div class="title">
+           Crop Insurance
+        </div>
+        <form action="/crop" method="post">
+          <div class="form">
+              <!-- <div class="input_field">
+                  <label>First Name</label>
+                  <input type ="text" name="fname" class="input">
+              </div> -->
+              <div class="input_field">
+              <label>Name</label>
+                  <input type ="text" name="name" class="input">
+              </div>
+              <div class="input_field">
+                 <label>Gender</label>
+                 <input type="radio" name=gender value="male" class="input">Male
+                 <input type="radio" name=gender value="female" class="input">Female
+             </div>
+              <div class="input_field">
+                  <label>Age</label>
+                  <input type="text" name="age" class="input">
+              </div>
+              <div class="input_field">
+                  <label>Contact Number</label>
+                  <input type="text" name="cno" class="input">
+              </div>
+              <div class="input_field">
+                  <label>Address</label>
+                  <textarea name="address" class="textarea"></textarea>
+              </div>
+              <div class="input_field">
+                <label>Postal Code</label>
+                <input type="text" name="pin"class="input">
+            </div>
+            <div class="input_field">
+                <label>Type of Crops</label>
+                <div class="custom_select">
+                    <select name="crops">
+                        <option value="">Select</option>
+                        <option name="r" value="rabi">Rabi</option>
+                        <option name="k" value="kharif">Kharif</option>
+                        <option name="z" value="zaid">Zaid</option>
+                    </select>
+                </div>
+            </div>
+            <div class="input_field">
+            <label>Agent Name</label>
+                <input type ="text" name="agent" class="input">
+            </div>
+            <div class="input_field">
+                <label>Event Name</label>
+                <input type="text" name="eventname"class="input">
+            </div>
+            <div class="input_field">
+                <label>Event Date</label>
+                <input type="date" name="date"class="input">
+            </div>
+            <div class="input_field">
+                <label>Event Location</label>
+                <input type="text" name="location" class="input">
+            </div>
+            <div class="input_field">
+                <label>Current Latitude</label>
+                <input type="text" name= "latitude" id="lat" class="input">
+            </div>
+            <div class="input_field">
+                <label>Current Longitude</label>
+                <input type="text" name= "longitude" id="long" class="input">
+            </div>
+            <div class="input_field terms">
+               <label class="check">
+                   <input type="checkbox">
+                   <span class="checkmark"></span>
+               </label>
+               <p>Agreed to terms and conditions</p>
+            </div>
+            <div class="input_field">
+               <input type="submit" value="Register" class="btn">
+            </div>
+            </div>
+        </form>
+    </div>
+    <script>
+    var x = document.getElementById("lat");
+    var y = document.getElementById("long");
+    navigator.geolocation.getCurrentPosition(successLocation, errorLocation, {
+      enableHighAccuracy: true
+    })
+    function successLocation(position) {
+      x.value = position.coords.latitude;
+      y.value = position.coords.longitude;
+      // x.value = "Worked";
+    }
+
+    function errorLocation() {
+        x.value = "error";
+        y.value = "error";
+    }
+
+    </script>
+</body>
+</html>

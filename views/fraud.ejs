@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Tables</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link rel="stylesheet" href="css/tablestyle.css">
+
+</head>
+
+<body>
+  <section>
+  <!--for demo wrap-->
+  <div class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th></th>
+          <th>Type</th>
+          <th></th>
+          <th>Distance(in Km)</th>
+          <th></th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="tbl-content">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tbody>
+        <% for(var i=0; i<fname.length; i++) { %>
+        <tr>
+          <td><%= fname[i] %></td>
+          <td></td>
+          <td><%= ftype[i] %></td>
+          <td></td>
+          <td><%= fdist[i] %></td>
+          <td></td>
+        </tr>
+          <% }%>
+      </tbody>
+    </table>
+  </div>
+</section>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <script src="js/table.js"></script>
+
+</body>
+</html>
